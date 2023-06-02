@@ -15,7 +15,7 @@ type Service struct {
 }
 
 func NewService(availabilityGetter AvailabilityGetter) (*Service, error) {
-	if availabilityGetter != nil {
+	if availabilityGetter == nil {
 		return nil, errors.New("availability must not be nil")
 	}
 	return &Service{AvailabilityGetter: availabilityGetter}, nil
